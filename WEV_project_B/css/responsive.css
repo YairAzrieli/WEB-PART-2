@@ -1,0 +1,271 @@
+/*
+* FitMeal - Responsive Stylesheet
+* ===============================
+* This file contains responsive styles for the FitMeal application
+* Created as part of the Web Development Course Project
+*
+* This file follows a mobile-first approach, with media queries 
+* for larger screens.
+*
+* Breakpoints:
+* - Small devices: 576px and up
+* - Medium devices: 768px and up
+* - Large devices: 992px and up
+* - Extra large devices: 1200px and up
+*/
+
+/* ========== Base Mobile Styles (Default) ========== */
+/* Mobile navigation style */
+@media (max-width: 767px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    /* Stack columns on mobile */
+    .row {
+        flex-direction: column;
+    }
+    
+    .col {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    /* Full width forms on mobile */
+    .form-container {
+        width: 100%;
+    }
+    
+    /* Adjust meal cards for mobile */
+    .meal-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Stack meal content on mobile */
+    .meal-content {
+        flex-direction: column;
+    }
+    
+    .meal-image {
+        flex: 0 0 auto;
+        margin-bottom: 1rem;
+    }
+    
+    .meal-image img {
+        height: 200px;
+    }
+    
+    /* Stack nutrition summary */
+    .nutrition-summary {
+        flex-direction: column;
+    }
+    
+    /* Stack meal nutrition items */
+    .meal-nutrition {
+        flex-wrap: wrap;
+    }
+    
+    /* Hero section mobile */
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+        width: 100%;
+    }
+    
+    /* Steps container mobile */
+    .steps-container {
+        flex-direction: column;
+    }
+    
+    .step {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ========== Small devices (576px and up) ========== */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    /* Adjust grid for small tablets */
+    .col-sm {
+        flex: 1;
+    }
+    
+    .col-sm-6 {
+        width: 50%;
+    }
+    
+    /* Two columns of meal cards on small devices */
+    .meal-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* ========== Medium devices (768px and up) ========== */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Restore horizontal row layout */
+    .row {
+        flex-direction: row;
+    }
+    
+    /* Navigation for tablets and up */
+    .nav-menu {
+        display: flex;
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+    
+    /* Form widths for larger screens */
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    /* Hero section layout for tablets */
+    .hero-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-text {
+        width: 50%;
+        padding-right: 2rem;
+    }
+    
+    .hero-image {
+        width: 50%;
+    }
+    
+    /* Three columns of meal cards on medium devices */
+    .meal-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Restore meal content layout */
+    .meal-content {
+        flex-direction: row;
+    }
+    
+    /* Restore nutrition summary layout */
+    .nutrition-summary {
+        flex-direction: row;
+    }
+    
+    /* Restore steps layout */
+    .steps-container {
+        flex-direction: row;
+    }
+}
+
+/* ========== Large devices (992px and up) ========== */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Multi-column footer on larger screens */
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footer-column {
+        width: 30%;
+    }
+    
+    /* Four columns of meal cards on large devices */
+    .meal-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ========== Extra large devices (1200px and up) ========== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* ========== Landscape Orientation ========== */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Adjustments for very short but wide viewports (like phones in landscape) */
+    .hero-section {
+        min-height: auto;
+        padding: 1rem 0;
+    }
+    
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    footer {
+        padding: 1rem 0;
+    }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+    /* Hide navigation, footer, buttons when printing */
+    header, 
+    footer, 
+    .nav-menu, 
+    .btn,
+    .no-print {
+        display: none;
+    }
+    
+    /* Adjust colors for better printing */
+    body {
+        color: black;
+        background: white;
+        font-size: 12pt;
+    }
+    
+    /* Ensure all content is visible when printing */
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+    
+    /* Force page breaks between sections if needed */
+    .meal-plan-day {
+        page-break-after: always;
+    }
+    
+    /* Show URLs after links when printing */
+    a:after {
+        content: " (" attr(href) ")";
+    }
+}

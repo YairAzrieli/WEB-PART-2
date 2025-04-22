@@ -1,0 +1,226 @@
+/*
+* FitMeal - Animations Stylesheet
+* ==============================
+* This file contains animations for the FitMeal application
+* Created as part of the Web Development Course Project
+*
+* The project requires at least one animation, but this file
+* provides several options to enhance the user experience.
+*/
+
+/* ========== Keyframe Animations ========== */
+
+/* Fade In animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide In from top animation */
+@keyframes slideInTop {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide In from right animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse animation for CTA buttons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Rotation animation for loading indicators */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Bounce animation for alerts */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ========== Animation Classes ========== */
+
+/* Apply these classes to elements you want to animate */
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.slide-in-top {
+    animation: slideInTop 0.8s ease forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+
+/* ========== Staggered Animations ========== */
+
+/* Use these for lists of items that should animate one after another */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========== Interactive Animations ========== */
+
+/* Hover animations for cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover animations */
+.btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Input focus animations */
+input, select, textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+/* ========== Page Transition Animations ========== */
+
+/* Add this class to the page container when it loads */
+.page-enter {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Form submission animation */
+.form-submit {
+    transition: all 0.3s ease;
+}
+
+.form-submit.loading {
+    opacity: 0.7;
+}
+
+.form-submit.success {
+    background-color: var(--success-color);
+}
+
+.form-submit.error {
+    background-color: var(--error-color);
+}
+
+/* ========== Animation for Features Section ========== */
+
+/* This animation will be used for the feature icons in the home page */
+.feature-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.15);
+}
+
+.feature-container:hover .feature-title {
+    color: var(--primary-color);
+}
+
+/* ========== Meal Plan Animation ========== */
+
+/* Animation for when a new meal is added to plan */
+@keyframes highlightMeal {
+    0% {
+        background-color: rgba(46, 125, 50, 0.2);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.meal-added {
+    animation: highlightMeal 2s ease;
+}
+
+/* ========== Animation for Success Messages ========== */
+
+@keyframes successFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-message {
+    animation: successFadeIn 0.5s ease forwards;
+    background-color: var(--success-color);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}

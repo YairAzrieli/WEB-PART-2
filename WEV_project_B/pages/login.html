@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>התחברות - FitMeal</title>
+    
+    <!-- קישור לקבצי CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Font Awesome - לאייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/icons/logo-FitMeal.jpg" alt="FitMeal Logo" style="height: 50px;">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="תפריט ניווט" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">דף הבית</a></li>
+                    <li><a href="planner.html">מתכנן ארוחות</a></li>
+                    <li><a href="login.html" class="active">התחברות</a></li>
+                    <li><a href="signup.html">הרשמה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="form-container fade-in">
+                <div class="card">
+                    <h2 class="text-center mb-3">התחברות</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="email">כתובת אימייל</label>
+                            <input type="email" id="email" name="email" required>
+                            <!-- כאן תוצג הודעת שגיאה אם נדרש -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">סיסמה</label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="password-toggle" aria-label="הצג סיסמה">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <!-- כאן תוצג הודעת שגיאה אם נדרש -->
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="remember-me" name="remember-me">
+                            <label for="remember-me">זכור אותי</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">התחבר</button>
+                        </div>
+                        
+                        <div class="form-footer text-center">
+                            <p><a href="#" class="forgot-password">שכחתי סיסמה</a></p>
+                            <p>אין לך חשבון? <a href="signup.html">הירשם עכשיו</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="login-benefits card mt-3">
+                    <h3>יתרונות החשבון שלך</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> שמירת תוכניות הארוחות שלך</li>
+                        <li><i class="fas fa-check-circle"></i> מעקב אחר ההתקדמות שלך</li>
+                        <li><i class="fas fa-check-circle"></i> התאמה אישית של הארוחות המועדפות</li>
+                        <li><i class="fas fa-check-circle"></i> עדכונים שבועיים ומתכונים חדשים</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FitMeal</h3>
+                    <p>תכנון ארוחות בהתאמה אישית לחיים בריאים יותר.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>קישורים</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">דף הבית</a></li>
+                        <li><a href="planner.html">מתכנן ארוחות</a></li>
+                        <li><a href="login.html">התחברות</a></li>
+                        <li><a href="signup.html">הרשמה</a></li>
+                        <li><a href="contact.html">צור קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>עקבו אחרינו</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>&copy; 2025 FitMeal. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- קישור לקבצי JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/validation.js"></script>
+    
+    <!-- סקריפט להצגת/הסתרת סיסמה -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordToggle = document.querySelector('.password-toggle');
+            const passwordInput = document.querySelector('#password');
+            
+            if (passwordToggle && passwordInput) {
+                passwordToggle.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    
+                    // Toggle icon
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-eye');
+                    icon.classList.toggle('fa-eye-slash');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

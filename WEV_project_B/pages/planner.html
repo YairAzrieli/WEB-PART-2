@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מתכנן ארוחות - FitMeal</title>
+    
+    <!-- קישור לקבצי CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Font Awesome - לאייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/icons/logo-FitMeal.jpg" alt="FitMeal Logo" style="height: 50px;">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="תפריט ניווט" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">דף הבית</a></li>
+                    <li><a href="planner.html" class="active">מתכנן ארוחות</a></li>
+                    <li><a href="login.html">התחברות</a></li>
+                    <li><a href="signup.html">הרשמה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Planner Intro Section -->
+    <section class="planner-intro">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="mb-2 fade-in">מתכנן הארוחות האישי שלך</h1>
+                <p class="mb-3 fade-in">מלא את הפרטים הבאים ונבנה עבורך תפריט מותאם אישית שיעזור לך להשיג את יעדיך התזונתיים.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Planner Form Section -->
+    <section class="planner-form">
+        <div class="container">
+            <div class="card fade-in">
+                <h2 class="text-center mb-3">הזן את הפרטים שלך</h2>
+                <form id="planner-form">
+                    <div class="form-row">
+                        <div class="form-group form-col">
+                            <label for="age">גיל</label>
+                            <input type="number" id="age" name="age" min="12" max="120" required>
+                        </div>
+                        <div class="form-group form-col">
+                            <label for="weight">משקל (ק"ג)</label>
+                            <input type="number" id="weight" name="weight" min="30" max="300" required>
+                        </div>
+                        <div class="form-group form-col">
+                            <label for="height">גובה (ס"מ)</label>
+                            <input type="number" id="height" name="height" min="100" max="250" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>מגדר</label>
+                        <div class="radio-container">
+                            <input type="radio" id="gender-male" name="gender" value="male" checked>
+                            <label for="gender-male">זכר</label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" id="gender-female" name="gender" value="female">
+                            <label for="gender-female">נקבה</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="activity-level">רמת פעילות גופנית</label>
+                        <select id="activity-level" name="activity-level" required>
+                            <option value="sedentary">לא פעיל (ללא פעילות גופנית)</option>
+                            <option value="light">פעילות קלה (1-3 פעמים בשבוע)</option>
+                            <option value="moderate" selected>פעילות בינונית (3-5 פעמים בשבוע)</option>
+                            <option value="active">פעילות גבוהה (6-7 פעמים בשבוע)</option>
+                            <option value="veryActive">פעילות גבוהה מאוד (פעמיים ביום או עבודה פיזית)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goal">מטרה</label>
+                        <select id="goal" name="goal" required>
+                            <option value="lose">ירידה במשקל</option>
+                            <option value="maintain">שמירה על משקל</option>
+                            <option value="gain">עלייה במסת שריר</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meal-count">מספר ארוחות ביום</label>
+                        <select id="meal-count" name="meal-count" required>
+                            <option value="3">3 ארוחות</option>
+                            <option value="4" selected>4 ארוחות (כולל חטיף)</option>
+                            <option value="5">5 ארוחות (כולל 2 חטיפים)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>העדפות תזונתיות</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="diet-vegetarian" name="dietary" value="vegetarian">
+                            <label for="diet-vegetarian">צמחוני</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="diet-vegan" name="dietary" value="vegan">
+                            <label for="diet-vegan">טבעוני</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="diet-gluten-free" name="dietary" value="gluten-free">
+                            <label for="diet-gluten-free">ללא גלוטן</label>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="diet-lactose-free" name="dietary" value="lactose-free">
+                            <label for="diet-lactose-free">ללא לקטוז</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="foods-likes">מאכלים שאתה אוהב (אופציונלי)</label>
+                        <textarea id="foods-likes" name="foods-likes" rows="2" placeholder="לדוגמה: עוף, אורז מלא, אבוקדו, ירקות ירוקים"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="foods-dislikes">מאכלים שאינך אוהב (אופציונלי)</label>
+                        <textarea id="foods-dislikes" name="foods-dislikes" rows="2" placeholder="לדוגמה: בצל, חצילים, מרק, קטניות"></textarea>
+                    </div>
+                    
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">צור תפריט</button>
+                        <button type="reset" class="btn btn-accent">אפס טופס</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Meal Plan Results Section -->
+    <section class="meal-plan-results">
+        <div class="container">
+            <!-- התוצאות יוצגו כאן באמצעות JavaScript -->
+            <div id="meal-plan-container" class="mt-4">
+                <!-- הארוחות יוצגו כאן -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FitMeal</h3>
+                    <p>תכנון ארוחות בהתאמה אישית לחיים בריאים יותר.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>קישורים</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">דף הבית</a></li>
+                        <li><a href="planner.html">מתכנן ארוחות</a></li>
+                        <li><a href="login.html">התחברות</a></li>
+                        <li><a href="signup.html">הרשמה</a></li>
+                        <li><a href="contact.html">צור קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>עקבו אחרינו</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>&copy; 2025 FitMeal. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- קישור לקבצי JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/mealPlanner.js"></script>
+</body>
+</html>
