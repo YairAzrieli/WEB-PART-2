@@ -1,0 +1,46 @@
+/*
+* FitMeal - Main Stylesheet
+* =========================
+* This file contains main styles for the FitMeal application
+* Created as part of the Web Development Course Project
+*
+* Contents:
+* 1. CSS Reset & Common Styles
+* 2. Typography
+* 3. Layout & Grid
+* 4. Header & Navigation
+* 5. Footer
+* 6. Forms & Input Elements
+* 7. Buttons & CTAs
+* 8. Cards & Containers
+* 9. Utility Classes
+*/
+
+/* ========== 1. CSS Reset & Common Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Main color palette based on project specifications */
+    --primary-color: #2E7D32;    /* Deep Green - symbolizes health and nature */
+    --accent-color: #FF9800;     /* Orange - represents energy and vitality */
+    --background-color: #C8F8C4; /* Soft Green - conveys freshness and wellness */
+    --text-color: #333333;       /* Dark Gray - for readability */
+    --light-text: #FFFFFF;       /* White - for contrast on dark backgrounds */
+    --error-color: #D32F2F;      /* Red - for error messages */
+    --success-color: #388E3C;    /* Green - for success messages */
+    --border-radius: 8px;        /* Standard border radius */
+}
+
+body {
+    font-family: Verdana, 'Arial Rounded MT', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+/* ... (rest of the file, up to line 685) ... */ 

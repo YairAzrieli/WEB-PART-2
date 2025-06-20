@@ -1,0 +1,23 @@
+/*
+* FitMeal - Animations Stylesheet
+* ==============================
+* This file contains animations for the FitMeal application
+* Created as part of the Web Development Course Project
+*
+* The project requires at least one animation, but this file
+* provides several options to enhance the user experience.
+*/
+
+/* ========== Keyframe Animations ========== */
+
+/* Fade In animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ... (rest of the file, up to line 227) ... */ 

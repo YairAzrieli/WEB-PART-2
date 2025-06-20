@@ -71,7 +71,6 @@
                         </div>
                         
                         <div class="form-footer text-center">
-                            <p><a href="#" class="forgot-password">שכחתי סיסמה</a></p>
                             <p>אין לך חשבון? <a href="signup.html">הירשם עכשיו</a></p>
                         </div>
                     </form>
@@ -109,12 +108,8 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>עקבו אחרינו</h3>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                    <h3>אודות</h3>
+                    <p>תכנון ארוחות בהתאמה אישית לחיים בריאים יותר.</p>
                 </div>
             </div>
             <div class="copyright text-center">
@@ -142,6 +137,10 @@
                     const icon = this.querySelector('i');
                     icon.classList.toggle('fa-eye');
                     icon.classList.toggle('fa-eye-slash');
+                    
+                    // Update aria-label
+                    const newLabel = type === 'password' ? 'הצג סיסמה' : 'הסתר סיסמה';
+                    this.setAttribute('aria-label', newLabel);
                 });
             }
         });

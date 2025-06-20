@@ -1,0 +1,84 @@
+<div class="about-container">
+    <div class="about-header">
+        <h1>אודות FitMeal</h1>
+        <p>הפלטפורמה שלך לתכנון ארוחות חכם ובריא</p>
+    </div>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h2>החזון שלנו</h2>
+            <p>ב-FitMeal אנחנו מאמינים שתזונה בריאה היא המפתח לאורח חיים בריא. המטרה שלנו היא להפוך את תכנון הארוחות לפשוט, מהנה ויעיל.</p>
+            <p>אנחנו מאמינים שכל אחד יכול להשיג את המטרות התזונתיות שלו עם הכלים הנכונים והתמיכה המתאימה.</p>
+        </div>
+        <div class="about-image">
+            <img src="/images/about-nutrition.jpg" alt="תזונה בריאה" loading="lazy">
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-image">
+            <img src="/images/hero-image.jpg" alt="תכנון ארוחות" loading="lazy">
+        </div>
+        <div class="about-content">
+            <h2>מה אנחנו מציעים</h2>
+            <ul class="features-list">
+                <li>
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                    <div>
+                        <h3>מתכונים מותאמים אישית</h3>
+                        <p>קבל המלצות למתכונים בהתאם להעדפות שלך, מגבלות תזונתיות ומטרות בריאותיות</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <div>
+                        <h3>מעקב תזונתי</h3>
+                        <p>עקוב אחר צריכת הקלוריות, החלבונים, הפחמימות והשומנים שלך</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <div>
+                        <h3>תכנון שבועי</h3>
+                        <p>תכנן את הארוחות שלך מראש וחסוך זמן וכסף</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <h2>הצוות שלנו</h2>
+            <p>אנחנו צוות של מומחי תזונה, מפתחים ומעצבים שמחויבים ליצור את הפלטפורמה הטובה ביותר לתכנון ארוחות.</p>
+            <p>המטרה שלנו היא לעזור לך להשיג את המטרות התזונתיות שלך בצורה פשוטה ויעילה.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="/images/team-1.jpg" alt="חבר צוות 1" loading="lazy">
+                <h3>דני כהן</h3>
+                <p>מומחה תזונה</p>
+            </div>
+            <div class="team-member">
+                <img src="/images/team-2.jpg" alt="חבר צוות 2" loading="lazy">
+                <h3>שרה לוי</h3>
+                <p>מפתחת ראשית</p>
+            </div>
+            <div class="team-member">
+                <img src="/images/team-3.jpg" alt="חבר צוות 3" loading="lazy">
+                <h3>רון דוד</h3>
+                <p>מעצב UX/UI</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>מוכנים להתחיל?</h2>
+        <p>הצטרפו עכשיו ותתחילו לתכנן את הארוחות שלכם בצורה חכמה</p>
+        <% if (!locals.user) { %>
+            <a href="/auth/signup" class="btn btn-primary">הירשם עכשיו</a>
+        <% } else { %>
+            <a href="/planner" class="btn btn-primary">תכנון ארוחות</a>
+        <% } %>
+    </section>
+</div> 

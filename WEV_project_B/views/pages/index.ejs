@@ -1,0 +1,86 @@
+<div class="hero">
+    <div class="hero-content">
+        <h1>תכנון ארוחות חכם</h1>
+        <p>תכנן את הארוחות שלך בקלות, שמור על תזונה מאוזנת והשג את המטרות שלך</p>
+        <% if (!locals.user) { %>
+            <div class="hero-buttons">
+                <a href="/auth/signup" class="btn btn-primary">התחל עכשיו</a>
+                <a href="/auth/login" class="btn btn-secondary">התחבר</a>
+            </div>
+        <% } else { %>
+            <div class="hero-buttons">
+                <a href="/planner" class="btn btn-primary">תכנון ארוחות</a>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<section class="features">
+    <h2>למה לבחור ב-FitMeal?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-utensils" aria-hidden="true"></i>
+            <h3>מתכונים מותאמים אישית</h3>
+            <p>קבל המלצות למתכונים בהתאם להעדפות שלך, מגבלות תזונתיות ומטרות בריאותיות</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <h3>מעקב תזונתי</h3>
+            <p>עקוב אחר צריכת הקלוריות, החלבונים, הפחמימות והשומנים שלך</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <h3>תכנון שבועי</h3>
+            <p>תכנן את הארוחות שלך מראש וחסוך זמן וכסף</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <h2>איך זה עובד?</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>הרשמה</h3>
+            <p>צור חשבון חינם והגדר את המטרות וההעדפות שלך</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>קבלת המלצות</h3>
+            <p>קבל המלצות למתכונים מותאמים אישית</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>תכנון ותיעוד</h3>
+            <p>תכנן את הארוחות שלך ועקוב אחר התקדמותך</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>מה אומרים המשתמשים שלנו</h2>
+    <div class="testimonials-grid">
+        <blockquote class="testimonial">
+            <p>"האפליקציה שינתה את הדרך שבה אני מתכנן את הארוחות שלי. קל לשימוש ומאוד יעיל!"</p>
+            <footer>- דני כהן</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+            <p>"המתכונים מעולים והמעקב התזונתי עזר לי להשיג את המטרות שלי"</p>
+            <footer>- שרה לוי</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+            <p>"השירות מעולה! חוסך לי המון זמן בתכנון הארוחות"</p>
+            <footer>- רון דוד</footer>
+        </blockquote>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>מוכנים להתחיל?</h2>
+    <p>הצטרפו עכשיו ותתחילו לתכנן את הארוחות שלכם בצורה חכמה</p>
+    <% if (!locals.user) { %>
+        <a href="/auth/signup" class="btn btn-primary">הירשם עכשיו</a>
+    <% } else { %>
+        <a href="/planner" class="btn btn-primary">תכנון ארוחות</a>
+    <% } %>
+</section> 

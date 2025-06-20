@@ -1,0 +1,82 @@
+<div class="contact-container">
+    <div class="contact-header">
+        <h1>צור קשר</h1>
+        <p>נשמח לשמוע ממך! השאר הודעה ונחזור אליך בהקדם</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <div>
+                    <h3>כתובת</h3>
+                    <p>רחוב הרצל 1, תל אביב</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <div>
+                    <h3>טלפון</h3>
+                    <p>03-1234567</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <div>
+                    <h3>אימייל</h3>
+                    <p>info@fitmeal.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <div>
+                    <h3>שעות פעילות</h3>
+                    <p>ראשון - חמישי: 9:00 - 18:00</p>
+                    <p>שישי: 9:00 - 13:00</p>
+                </div>
+            </div>
+        </div>
+
+        <form action="/contact" method="POST" class="contact-form">
+            <% if (locals.error) { %>
+                <div class="error-message">
+                    <%= error %>
+                </div>
+            <% } %>
+            <% if (locals.success) { %>
+                <div class="success-message">
+                    <%= success %>
+                </div>
+            <% } %>
+            <div class="form-group">
+                <label for="name">שם מלא</label>
+                <input type="text" id="name" name="name" value="<%= locals.formData ? formData.name : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">אימייל</label>
+                <input type="email" id="email" name="email" value="<%= locals.formData ? formData.email : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">נושא</label>
+                <input type="text" id="subject" name="subject" value="<%= locals.formData ? formData.subject : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="message">הודעה</label>
+                <textarea id="message" name="message" rows="5" required><%= locals.formData ? formData.message : '' %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">שלח הודעה</button>
+        </form>
+    </div>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.6511603508357!2d34.78176931541484!3d32.08500398113429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b9c2e5d4b4f%3A0x7c1f0a9f0c0c0c0c!2sHerzl%20St%201%2C%20Tel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1620000000000!5m2!1sen!2sil"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            title="מפת מיקום המשרד"
+        ></iframe>
+    </div>
+</div> 

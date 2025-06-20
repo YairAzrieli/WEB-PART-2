@@ -1,0 +1,72 @@
+/*
+* FitMeal - Responsive Stylesheet
+* ===============================
+* This file contains responsive styles for the FitMeal application
+* Created as part of the Web Development Course Project
+*
+* This file follows a mobile-first approach, with media queries 
+* for larger screens.
+*
+* Breakpoints:
+* - Small devices: 576px and up
+* - Medium devices: 768px and up
+* - Large devices: 992px and up
+* - Extra large devices: 1200px and up
+*/
+
+/* ========== Base Mobile Styles (Default) ========== */
+@media (max-width: 767px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 0.75rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius);
+    }
+    
+    .nav-toggle {
+        display: block;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--light-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-toggle:hover {
+        transform: scale(1.1);
+    }
+    
+    /* ... (rest of the file, up to line 445) ... */
+}
+
+/* contents of css/responsive.css go here */ 
